@@ -5,7 +5,7 @@ function Navigation(){
     return(
         <div className="nav">
             <div className="nav-">
-                <h1>Etsy</h1>
+                <Link to="/"><h1>Etsy</h1></Link>
                 <div className="Nig">
                     <IoLocationSharp/>
                     <div>
