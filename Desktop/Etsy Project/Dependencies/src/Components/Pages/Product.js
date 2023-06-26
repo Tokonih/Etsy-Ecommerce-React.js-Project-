@@ -9,6 +9,7 @@ import {
   IoStarSharp,
   IoCheckmark,
 } from "react-icons/io5";
+
 import HeroSlider, { Slide } from "hero-slider";
 function Product() {
   return (
@@ -41,33 +42,40 @@ function Product() {
                     height:"500vh"
                   }}
             >
-              <Slide
+               <Slide
                 background={{
-                  backgroundImage: img,
+                  backgroundImage: `url(${img})`,
                   backgroundAttachment: "fixed",
                 }}
               />
 
               <Slide
+                background={{
+                  backgroundImage: `url(${img2})`,
+                  backgroundAttachment: "fixed",
+                }}
+              />
+
+              <Slide
+                background={{
+                  backgroundImage: `url(${img3})`,
+                  backgroundAttachment: "fixed",
+                }}
+              />
+
+              <Slide
+                background={{
+                  backgroundImage: `url(${img2})`,
+                  backgroundAttachment: "fixed",
+                }}
+              />
+
+              {/* <Slide
                 background={{
                   backgroundImage: img2,
                   backgroundAttachment: "fixed",
                 }}
-              />
-
-              <Slide
-                background={{
-                  backgroundImage: img3,
-                  backgroundAttachment: "fixed",
-                }}
-              />
-
-              <Slide
-                background={{
-                  backgroundImage: img2,
-                  backgroundAttachment: "fixed",
-                }}
-              />
+              /> */}
             </HeroSlider>
             {/* <button><IoChevronBackOutline/></button>
             <img src={img} alt="" />
@@ -109,7 +117,7 @@ function Product() {
                     <option value="pink">Pink</option>
                     <option value="red">Rd</option>
                   </select>
-                  <button>Add to cart</button>
+                  <button >Add to cart</button>
                 </form>
               </div>
               <div className="star-seller">

@@ -947,3 +947,211 @@
   .highlight select:hover{
    background-color: whitesmoke;
   }
+
+  /* Cart page */
+  .cart-page{
+    margin-top: 20px;
+  }
+  .oh-dear{
+    height: 70px;
+    width: 75%;
+    margin: auto;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: 
+    #a61a2e;
+  }
+  .item-num{
+    height: 70px;
+    width: 75%;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .buy-conf{
+    height: 70px;
+    width: 75%;
+    margin: auto;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: 
+    #d7e6f5;
+  }
+
+  .payment{
+    width: 100%;
+    height: 800px;
+  }
+
+  .payment-details{
+    height: 800px;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 50px;
+  }
+
+  .prod{
+   
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
+    line-height: 20px;
+  }
+
+  .prod img{
+    width: 200px;
+  }
+
+  .prodbtn{
+    display: flex;
+    gap: 10px;
+  }
+
+  .prodbtn button{
+    background-color: transparent;
+    font-size: 600;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+    .prodbtn button:hover{
+    background-color: whitesmoke;
+  
+  }
+
+  .price-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: red; */
+    box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9);
+    padding: 10px;
+  }
+
+  .prices{
+    text-align: end;
+    line-height: 40px;
+  }
+
+  .payment{
+    /* width: 40%; */
+  }
+
+  .proddsc{
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+   .addbtn{
+    padding: 15px 20px;
+      border: none;
+      background-color: transparent;
+      margin-bottom: 30px;
+      border-radius: 10px;
+   }
+
+   .addbtn:hover{
+    background-color: whitesmoke;
+ }
+
+ .how-to-pay{
+  width: 30%;
+  line-height: 30px;
+ }
+
+ .items{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  line-height: 1px;
+
+  /* gap: 30px; */
+ }
+
+
+
+ .total-price{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+ }
+
+ .standard{
+  width: 300px;
+  height: 50px;
+  border: none;
+  box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9);
+  border-radius: 5px;
+ }
+
+ .procees{
+  width: 95%;
+  height: 45px;
+  margin: auto;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  margin-bottom: 30px;
+ }
+
+ .apply{
+  width: 50%;
+  height: 45px;
+  margin: auto;
+  border-radius: 10px;
+  color: black;
+
+  background-color: transparent;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border: none;
+ }
+ .apply:hover{
+  background-color: whitesmoke;
+  color: black;
+  border: none;
+ }
+
+ .cart-footer{
+  height: 100px;
+  width: 100%;
+ }
+
+ .cart-footer-details{
+  height: 100px;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+ }
+
+ .lang{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+ }
+
+ .terms{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+ }
+
+ .Merchant{
+  text-align: center;
+ }
