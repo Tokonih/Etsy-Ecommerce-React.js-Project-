@@ -1,6 +1,7 @@
 import {IoLocationSharp, IoSearchSharp, IoHeartOutline, IoBasketOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Cart from "../Components/Pages/Cart"
+import Signin from "./Pages/Signin";
 
 function Navigation(){
     return(
@@ -19,7 +20,7 @@ function Navigation(){
                 <input type="text" placeholder="Search for anything" />
                 <IoSearchSharp className="heart"/>
                 </div>
-                <Link className="Sign-in"> Sign in</Link>
+                <Link to="Signin" element={<Signin/>} className="Sign-in"> Sign in</Link>
                 <Link className="heart"> <IoHeartOutline/> </Link>
                 <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline/></Link>
             </div>
