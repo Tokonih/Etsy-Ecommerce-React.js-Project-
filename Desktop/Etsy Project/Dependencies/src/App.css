@@ -406,6 +406,7 @@
   /* height: 600px; */
 }
 
+
 .background {
   width: 75%;
   margin: auto;
@@ -585,6 +586,53 @@
 .bg-right-grid-5:hover {
   box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
 }
+@media (max-width:1000px) {
+  .Background{
+    width: 100%;
+  }
+
+  .background{
+    width: 100%;
+    margin: auto;
+  }
+  .bg-left{
+    background-position: center;
+    object-fit: contain;
+  }
+  .bg-2 {
+    width: 100%;
+  }
+  .bg-row-2{
+    width: 95%;
+    margin: auto;
+  }
+  .bg-row-2-grid{
+    width: 95%;
+  } 
+}
+
+@media (max-width:768px){
+  .shop-row{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .shop-card{
+    width: 100%;
+  }
+  .find-something-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .single-product{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
 
 /* Bg row 2 */
 
