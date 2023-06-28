@@ -20,7 +20,7 @@ function Navigation(){
                 <input type="text" placeholder="Search for anything" />
                 <IoSearchSharp className="heart"/>
                 </div>
-                <Link to="Signin" element={<Signin/>} className="Sign-in"> Sign in</Link>
+                <Link to="/Signin" element={<Signin/>} className="Sign-in"> Sign in</Link>
                 <Link className="heart"> <IoHeartOutline/> </Link>
                 <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline/></Link>
             </div>

@@ -1155,3 +1155,125 @@
  .Merchant{
   text-align: center;
  }
+
+ /* Sign in page */
+
+ .register{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .register button{
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 700;
+  background-color: white;
+ }
+ .overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  transition: opacity 500ms;
+  /* visibility: hidden;  */
+  /* opacity: 0; */
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  /* background-color: red; */
+
+ }
+
+ .overlay:target{
+  visibility: visible;
+  opacity: 1;
+ }
+
+ .wrapper{
+  margin: 70px auto;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  width: 20%;
+  position: relative;
+  transition: all 5s ease-in-out;
+ }
+
+ .close{
+  position: absolute;
+ }
+
+ .wrapper input{
+  display: block;
+  width: 95%;
+  margin: auto;
+  height: 40px;
+  border-radius: 5px;
+  /* box-shadow: 2px 2px 5px rgba(67, 66, 66, 0.4); */
+  border-color: rgba(67, 66, 66, 0.4);
+ }
+
+ .input{
+  margin-bottom: 20px;
+ }
+
+ .signinbtn{
+  width: 95%;
+  margin: auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+
+ }
+
+ .checkbox{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .check{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+ }
+ .checkbox h6{
+  font-weight: 700;
+ }
+
+ .checkbox input{
+  width: 10%;
+  margin: 0;
+ }
+
+ .OR{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .OR hr{
+  width: 40%;
+ }
+
+ .signin-opts button{
+  /* display: block;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 2px solid;
+  width: 95%;
+  margin: auto; */
+ }
