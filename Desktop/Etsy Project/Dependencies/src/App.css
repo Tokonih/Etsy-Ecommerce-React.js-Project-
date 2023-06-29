@@ -1325,3 +1325,71 @@
   width: 95%;
   margin: auto; */
  }
+
+
+ /* Dp-signup */
+ .Dp-signup{
+  height: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+ }
+
+ .sign-left{
+  height: 900px;
+
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .sign-right{
+  height: 900px;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+ }
+
+ .sign-form{
+  width: 30%;
+ }
+
+ .sign-img{
+  height: 900px;
+  width: 70%;
+ }
+ .sign-img img{
+  /* height: 100%; */
+  width: 100%;
+ }
+
+ .sign-form input{
+  display: block;
+  /* width: 100%; */
+  /* height: 15px;
+  padding: 10px; */
+ }
+
+ .dp-check{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+ }
+
+.show{
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid;
+  padding: 10px;
+
+}
+
+.show input{
+  width: 100%;
+  border: none;
+}
