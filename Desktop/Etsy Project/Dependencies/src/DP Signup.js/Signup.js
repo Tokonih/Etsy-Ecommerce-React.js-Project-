@@ -5,7 +5,6 @@ function Signup() {
     <div>
       <div className="Dp-signup">
         <div className="sign-left">
-          <h1>dp page</h1>
         </div>
         <div className="sign-right">
           <div className="sign-form">
@@ -17,7 +16,7 @@ function Signup() {
               </h6>
               <div>
                 <label>Email address</label>
-                <input type="email" className="" />
+                <input type="email" className="info" />
               </div>
               <div className="dp-check">
                 <input type="checkbox" />
@@ -44,16 +43,16 @@ function Signup() {
 
               <div>
                 <label>First name </label>
-                <input type="email" />
+                <input type="text" className="info" />
               </div>
 
               <div>
                 <label>Last name </label>
-                <input type="email" />
+                <input type="text" className="info"/>
               </div>
               <div>
                 <label>Date of birth </label>
-                <div>
+                <div className="select">
                   <select name="" id="">
                     <option value="">Day</option>
                     <option value="">1</option>
@@ -73,7 +72,7 @@ function Signup() {
                 </div>
                 <p>You need to be 16 or over to have account with us</p>
               </div>
-              <div>
+              <div className="select2">
                 <label>Gender (optional)</label>
                 <select name="" id="">
                     <option value="">Please select</option>
@@ -81,7 +80,7 @@ function Signup() {
                     <option value="">3</option>
                   </select>
               </div>
-              <div>
+              <div className="check2">
                 <p>I’d like to receive exclusive discounts and news from Dorothy Perkins by:</p>
                 <div  className="dp-check">
                     <input type="checkbox" />
@@ -89,11 +88,11 @@ function Signup() {
                 </div>
                 <div className="dp-check">
                     <input type="checkbox" />
-                    <p>Email</p>
+                    <p> Post</p>
                 </div >
                 <div  className="dp-check">
                     <input type="checkbox" />
-                    <p>Email</p>
+                    <p>SMS</p>
                 </div>
                 <div  className="dp-check">
                     <input type="checkbox" />

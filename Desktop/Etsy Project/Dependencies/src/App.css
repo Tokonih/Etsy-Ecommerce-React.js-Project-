@@ -1354,13 +1354,19 @@
  }
 
  .sign-form{
-  width: 30%;
+  width: 35%;
+  padding: 10px;
  }
-
  .sign-img{
-  height: 900px;
-  width: 70%;
- }
+   height: 900px;
+   width: 65%;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 100px;
+  }
+  .sign-form label{
+   font-weight: 700;
+  }
  .sign-img img{
   /* height: 100%; */
   width: 100%;
@@ -1368,6 +1374,7 @@
 
  .sign-form input{
   display: block;
+  outline: none;
   /* width: 100%; */
   /* height: 15px;
   padding: 10px; */
@@ -1377,6 +1384,10 @@
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
+ }
+
+ .dp-check p{
+  font-weight: 700;
  }
 
 .show{
@@ -1392,4 +1403,44 @@
 .show input{
   width: 100%;
   border: none;
+}
+
+.info{
+  width: 100%;
+  padding: 10px;
+  height: 15px;
+  border: 1px solix rgba(113, 112, 112, 0.9);
+}
+
+.select{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select select{
+  width: 30%;
+  height: 30px;
+  padding: 2px;
+}
+
+
+
+.select2 select{
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 2px;
+}
+
+.check2 p{
+  font-size: 13px;
+}
+
+.sign-form button{
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: black;
+  font-weight: 700;
 }

@@ -7,7 +7,7 @@ function Navigation(){
     return(
         <div className="nav">
             <div className="nav-">
-                <Link to="/"><h1>Etsy</h1></Link>
+                <Link to="/"><h1 style={{textDecoration:"none"}}>Etsy</h1></Link>
                 <div className="Nig">
                     <IoLocationSharp/>
                     <div>
