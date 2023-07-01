@@ -1,3 +1,87 @@
-.Dashboard{
+.Dash{
   width: 100%;
+}
+
+.Dashboard{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.Dash-left{
+  width: 20%;
+  height: 900px;
+  border: 1px solid;
+  padding-top: 20px;
+  
+}
+
+.Dash-left button{
+  width: 90%;
+  margin: auto;
+  height: 50px;
+  display: block;
+  /* border: 1px solid; */
+}
+
+
+.Dash-left h1{
+  color: 
+#facbb4;
+}
+
+.Dash-right{
+  width:  80%;
+  /* padding: 20px; */
+}
+.Dash-right h1{
+  display: block;
+  background-color: whitesmoke;
+  padding-left: 20px;
+  color: #facbb4;
+}
+.total{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.total div{
+  width: 30%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TP{
+  background-color: #4d6bc6;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+.TU{
+  background-color: #d7e6f5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+.TPC{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+  background-color: 
+  #fdebd2;
+}
+.TPC-{
+  font-size: 50px;
 }
