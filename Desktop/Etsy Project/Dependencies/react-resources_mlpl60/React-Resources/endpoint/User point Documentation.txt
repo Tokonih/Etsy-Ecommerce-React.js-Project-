@@ -1,0 +1,111 @@
+Use the end point base on description and the data to post and see the response
+ip-address:= http://159.65.21.42:9000
+==========================================================
+POST  ip-address/register  (User registration or Create user Endpoint)
+SEND-DATA:
+{
+    "name": "Mike",
+    "phone": "0868678678",
+    "email": "mike@gmail.com",
+    "password": "12345"
+}
+
+GET-RESPONSE:
+{
+    "_id": "5ee8104f3113914f94531a0f",
+    "name": "Benys",
+    "email": "jame@gmail.com",
+    "phone": 8686786782
+}
+
+ERROR:
+{
+    "error": "User exists"
+}
+
+==========================================================
+
+POST  ip-address/login  (User login Endpoint)
+SEND-DATA:
+{
+    "email": "jame@gmailsa.com",
+    "password": "12345"
+}
+
+GET-RESPONSE:
+{
+    "_id": "5ee8104f3113914f94531a0f",
+    "name": "Benys",
+    "phone": 8686786782,
+    "email": "jame@gmail.com",
+}
+
+ERROR:
+{
+    "error": "email or password does not exist"
+}
+
+==========================================================
+
+GET ip-address/users (Get all users Endpoint)
+GET-RESPONSE:
+[
+    {
+        "_id": "5ee80affe7312041147b4ba9",
+        "name": "Ben",
+        "phone": 868678678,
+        "email": "james@gmail.com",
+        "password": "12345",
+        "__v": 0
+    },
+    {
+        "_id": "5ee8104f3113914f94531a0f",
+        "name": "Benys",
+        "phone": 8686786782,
+        "email": "jame@gmail.com",
+        "password": "12345",
+        "__v": 0
+    }
+]
+
+==========================================================
+
+GET ip-address/user/:userID e.g 5ee80affe7312041147b4ba9 (Get a  user Endpoint)
+GET-RESPONSE:
+{
+    "success": "operation successful"
+}
+
+==========================================================
+
+PUT ip-address/user/:userID e.g 5ee80affe7312041147b4ba9 (Update User Endpoint)
+SEND-DATA:
+{
+    "name": "Benys",
+    "phone": 8686786782,
+    "email": "jame@gmail.com",
+    "password": "12345"
+}
+
+GET-RESPONSE:
+{
+    "_id": "5ee8104f3113914f94531a0f",
+    "name": "Jammmy",
+    "email": "jame@gmail.com",
+    "phone": 805343454333333
+}
+
+ERROR:
+{
+    "error": "email or password does not exist"
+}
+
+==========================================================
+
+DELETE ip-address/user/:userID e.g 5ee80affe7312041147b4ba9 (Delete user Endpoint)
+GET-RESPONSE:
+{
+    "success": "operation successful"
+}
+
+==========================================================

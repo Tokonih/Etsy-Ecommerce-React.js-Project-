@@ -1,16 +1,15 @@
 import Footer from "../Footer";
 import Navigation from "../Navigation";
 import img from "../img/il_300x300.1049222468_dsnp.jpg";
-import img2 from "../img/il_300x300.1049222468_dsnp.jpg";
-import img3 from "../img/il_340x270.1183532610_rmdm.jpg";
+
 import {
-//   IoChevronBackOutline,
-//   IoChevronForwardSharp,
+  IoChevronBackOutline,
+  IoChevronForwardSharp,
   IoStarSharp,
   IoCheckmark,
 } from "react-icons/io5";
 
-import HeroSlider, { Slide } from "hero-slider";
+// import HeroSlider, { Slide } from "hero-slider";
 function Product() {
   return (
     <div>
@@ -26,7 +25,7 @@ function Product() {
             <img src={img} alt="" />
           </div>
           <div className="middleimg">
-            <HeroSlider 
+            {/* <HeroSlider 
                   slidingAnimation = "left_to_right"
                   orientation="horizontal"
                   initialSlide= {1}
@@ -70,16 +69,10 @@ function Product() {
                 }}
               />
 
-              {/* <Slide
-                background={{
-                  backgroundImage: img2,
-                  backgroundAttachment: "fixed",
-                }}
-              /> */}
-            </HeroSlider>
-            {/* <button><IoChevronBackOutline/></button>
+            </HeroSlider> */}
+            <button><IoChevronBackOutline/></button>
             <img src={img} alt="" />
-            <button><IoChevronForwardSharp/></button> */}
+            <button><IoChevronForwardSharp/></button>
           </div>
           <div className="right-details">
             <div>

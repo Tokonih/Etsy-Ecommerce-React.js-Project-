@@ -1,5 +1,4 @@
 // import Navigation from "../Navigation";
-import Btn from "../Pages/btn"
 import {  useNavigate } from "react-router-dom";
 import { IoLogoGoogle, IoLogoFacebook, IoLogoAppleAppstore } from "react-icons/io5";
 

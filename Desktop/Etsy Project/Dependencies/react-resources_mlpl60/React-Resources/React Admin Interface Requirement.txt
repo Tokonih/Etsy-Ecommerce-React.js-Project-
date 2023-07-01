@@ -1,0 +1,26 @@
+Dashboard Admin Interface Requirement -- Create a UI of choice that includes the following
+
+1. Dashboard Page
+	Cards view for:
+		Total Products
+		Total Users
+		Total Products in cart	
+	And, a table view showing 10 products. 
+
+2. Product page
+	product grid view or Table View
+		This view should include
+			Editing of product
+			Deleting of product
+
+3. Users Page:
+	Table View of all users
+		This view should include
+			Deleting of users
+			Editing of users
+
+4. Create Product Page
+	This view should be a form to create a new product
+
+5. Create User Page
+	This view should be a form to create a new user

@@ -1,0 +1,90 @@
+Use the end point base on description and the data to post and see the response
+ip-address:= http://159.65.21.42:9000
+==========================================================
+GET  ip-address/products  (Get all products Endpoint)
+GET-RESPONSE:
+[
+    {
+        "image": "/uploads/98165fe2e88341193.5dd3aa37f33f6.png",
+        "_id": "5ee8b0e9081b563044ecf2d0",
+        "name": "Sweet Corn",
+        "category": "popular",
+        "price": 200,
+        "quantity": 12,
+        "description": "This is a sweet corn",
+    },
+]
+
+==========================================================
+POST  ip-address/create/product  (Create product Endpoint)
+SEND-DATA:
+{
+    "name": "Sweet Corn",
+    "category": "popular",
+    "price": "200",
+    "quantity": "12",
+    "image":file,
+    "description": "This is a sweet corn ",
+   
+}
+RESPONSE:
+{
+    "_id": "5ee8c74752307a08249b2970",
+    "image": "/uploads/81465fe2e88341193.5dd3aa37f33f6.png",
+    "name": "Sweet Corn",
+    "category": "popular",
+    "price": 200,
+    "quantity": 12,
+    "description": "asdldjklasjd asjkd a sadjas  sadkjaskljd",
+    
+}
+
+==========================================================
+
+PUT  ip-address/update/product/:ID 5ee8c74752307a08249b2970  (Update product Endpoint)
+SEND-DATA:
+{
+    "name": "Sweet Corn",
+    "category": "popular",
+    "price": "200",
+    "quantity": "12",
+    "image":file,
+    "description": "This is a sweet corn ",
+
+}
+RESPONSE:
+{
+    "_id": "5ee8c74752307a08249b2970",
+    "image": "/uploads\\81465fe2e88341193.5dd3aa37f33f6.png",
+    "name": "Sweet Corn",
+    "category": "popular",
+    "price": 200,
+    "quantity": 12,
+    "description": "asdldjklasjd asjkd a sadjas  sadkjaskljd",
+
+}
+
+==========================================================
+
+DELETE ip-address/product/:productID e.g 5ee8b1aeaec7192850933088 (Delete Endpoint)
+RESPONSE:
+{
+    "success": "operation successful"
+}
+
+==========================================================
+
+GET ip-address/product/:productID e.g 5ee8b1aeaec7192850933088 (Get a product Endpoint)
+{
+    "_id": "5ee8c74752307a08249b2970",
+    "image": "/uploads\\81465fe2e88341193.5dd3aa37f33f6.png",
+    "name": "Sweet Corn",
+    "category": "popular",
+    "price": 200,
+    "quantity": 12,
+    "description": "asdldjklasjd asjkd a sadjas  sadkjaskljd",
+ 
+}
+
+==========================================================
+
