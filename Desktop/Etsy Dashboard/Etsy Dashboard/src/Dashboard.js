@@ -1,15 +1,17 @@
 import { IoCartOutline, IoPeopleOutline, IoShirtOutline } from "react-icons/io5";
-
+import { Link, } from "react-router-dom";
 function Dashboard() {
   return (
     <div className="Dash">
       <div className="Dashboard">
         <div className="Dash-left">
-          <button>Dashboard</button>
-          <button>Product </button>
-          <button>Users</button>
-          <button>Create Product</button>
-          <button>Create User </button>
+        <Link className="link" to="/" >Dashboard</Link>
+          <Link className="link" to="/Product">Product </Link>
+          <Link className="link" to="/Users">Users</Link>
+          <Link className="link" to="/Createproduct">
+            Create Product
+          </Link>
+          <Link className="link">Create User </Link>
         </div>
         <div className="Dash-right">
           <h1>Etsy</h1>

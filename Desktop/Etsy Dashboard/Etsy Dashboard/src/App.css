@@ -85,3 +85,136 @@
 .TPC-{
   font-size: 50px;
 }
+
+/* Product page */
+.find-something-row {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* align-items: center;
+  justify-content: space-between; */
+  gap: 20px;
+  /* text-align: center; */
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.find-something-card {
+  /* width:24%; */
+  /* border-radius: 20px; */
+  position: relative;
+  /* line-height: 10px; */
+
+  /* box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9); */
+}
+
+.find-something-card:hover {
+  box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9);
+}
+
+.find-something-card p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.find-something-card h3 {
+  font-size: 15px;
+  margin: 0px 0;
+}
+.find-something-card img {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.find-heart {
+  position: relative;
+  left: 90%;
+  /* width: 10px; */
+  top: 10%;
+  visibility: hidden;
+}
+
+.find-something-card:hover .find-heart {
+  visibility: visible;
+ 
+}
+
+
+.free-delivery {
+  background-color: #d4e9d7;
+  border: none;
+  border-radius: 10px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.num {
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.edit{
+  padding: 15px 25px;
+  color: white;
+  background-color: Green;
+  border: none;
+  border-radius: 10px;
+}
+
+.delete{
+  padding: 15px 25px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+}
+
+.prdbtn{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+/* Users */
+table{
+  width: 100%;
+}
+
+td, th{
+  text-align: center;
+}
+
+tr:nth-child(even){
+  background-color: whitesmoke;
+}
+
+/* Create Product Form */
+
+.createproduct{
+  width:40%;
+  height: 600px;
+  margin: auto;
+  background-color: whitesmoke;
+}
+
+.createproduct textarea{
+  display: block;
+  width: 60%;
+  height: 50px;
+}
+.createproduct div{
+  margin-bottom: 30px;
+  /* width: 40%; */
+  /* margin: auto; */
+}
+.createproduct input{
+  display: block;
+  height: 30px;
+  width: 60%;
+  border-radius: 5px;
+}
