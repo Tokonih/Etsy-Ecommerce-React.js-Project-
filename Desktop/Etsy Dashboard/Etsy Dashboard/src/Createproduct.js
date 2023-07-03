@@ -6,7 +6,7 @@ function Createproduct() {
     const [category, setCategory]= useState("")
     const [price, setPrice] = useState("")
     const [quantity, setQuantity]= useState("")
-    const [image, setImage]= useState()
+    const [image, setImage]= useState("")
     const [description, setDescription]= useState("")
     const [err, setErr] =useState (false)
     
@@ -89,7 +89,7 @@ function Createproduct() {
 
                 <div>
                     <label>Image</label>
-                    <input type="file" onChange={(e)=> setImage(e.target.value)} value={image}/>
+                    <input type="text" onChange={(e)=> setImage(e.target.value)} value={image}/>
                    {err=== true && image===""?  <span>Image require</span> : image===null}
                 </div>
 

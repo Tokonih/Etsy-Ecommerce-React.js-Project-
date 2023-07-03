@@ -1,10 +1,16 @@
+import { useEffect, useState,  } from "react";
+import {Link, useNavigate,  } from "react-router-dom";
 
-
-  import { useEffect, useState } from "react";
-// import img7 from "./img/il_340x270.1013457467_9b2h.jpg";
-import {Link,  } from "react-router-dom";
 function Product() {
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState([]) 
+    const Navigate = useNavigate()
+
+    const editprd = (id)=>{
+        Navigate("/Editproduct/"+id)
+    }
+    const deleteprd =(id)=>{
+        Navigate()
+    }
 
     const getProd =(category)=>{
         fetch(`http://159.65.21.42:9000/products` )
@@ -39,11 +45,13 @@ function Product() {
             {product && product.map((data)=>(
                      <div className="find-something-card" key={product.id}>
                      <img src={data.image} alt="" />
+                     <p>{data._id}</p>
                      <p>{data.description}</p>
                      <h3>{data.price}</h3>
                      <p>{data.name}</p>
                      <div className="prdbtn">
-                     <button className="edit">Edit</button><button className="delete">Delete</button>
+                     <button onClick={()=>editprd(data._id)} className="edit">Edit</button>
+                     <button onClick={()=> deleteprd(data._id)} className="delete">Delete</button>
          
                      </div>
                    </div>

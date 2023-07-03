@@ -4,6 +4,7 @@ import Dashboard from './Dashboard';
 import Product from './Product';
 import Users from './Users';
 import Createproduct from './Createproduct';
+import Editproduct from './Editproduct';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
                 <Route exact path="/Product" element={<Product/>} />
                 <Route exact path="/Users" element={<Users/>} />
                 <Route exact path="/Createproduct" element={<Createproduct/>} />
+                <Route exact path="/Editproduct/:id" element={<Editproduct/>} />
             </Routes>
         </BrowserRouter>
      
