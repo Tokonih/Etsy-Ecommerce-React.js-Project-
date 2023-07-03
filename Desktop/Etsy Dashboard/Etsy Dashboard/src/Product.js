@@ -9,7 +9,16 @@ function Product() {
         Navigate("/Editproduct/"+id)
     }
     const deleteprd =(id)=>{
-        Navigate()
+        if(window.confirm("Do you want to delete ?")){
+          fetch(`http://159.65.21.42:9000/product/${id}`,{
+            method:"DELETE",
+          }).then((resp)=> {
+            alert("Delete successfull")
+            window.location.reload()
+          }).catch((err)=>{
+            console.log(err.message)
+          })
+        }
     }
 
     const getProd =(category)=>{
@@ -45,9 +54,8 @@ function Product() {
             {product && product.map((data)=>(
                      <div className="find-something-card" key={product.id}>
                      <img src={data.image} alt="" />
-                     <p>{data._id}</p>
                      <p>{data.description}</p>
-                     <h3>{data.price}</h3>
+                     <h3>₦{data.price}</h3>
                      <p>{data.name}</p>
                      <div className="prdbtn">
                      <button onClick={()=>editprd(data._id)} className="edit">Edit</button>

@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import { IoCartOutline, IoPeopleOutline, IoShirtOutline } from "react-icons/io5";
 import { Link, } from "react-router-dom";
 function Dashboard() {
+  const [totalProduct, setTotalProduct]= useState([])
+  const getData = (category)=>{
+    fetch(`http://159.65.21.42:9000/products`)
+    .then((resp)=>resp.json())
+    .then((data)=> {
+      const info = data.filter((cat)=> cat.category===category)
+      setTotalProduct(info)
+      console.log(info)
+    } )
+  }
+  //.catch((err)=>{
+   // console.log(err.message)
+ // })
+
+  useEffect(()=>{
+      getData("Tokonih")
+  }, [])
   return (
     <div className="Dash">
       <div className="Dashboard">
@@ -16,9 +34,13 @@ function Dashboard() {
         <div className="Dash-right">
           <h1>Etsy</h1>
           <div className="total">
-            <div className="TP"><h2>Total Products: <span>5432</span></h2>
-            <IoShirtOutline className="TPC-"/>
-            </div>
+            {/* {totalProduct && totalProduct.map((totalprod)=>{ */}
+                <div className="TP" >
+                  <h2>Total Products:  <span>{totalProduct.length}</span></h2>
+                <IoShirtOutline className="TPC-"/>
+                </div>
+            {/* })} */}
+            
             <div className="TU"><h2>Total Users: <span>5432</span></h2>
                 <IoPeopleOutline  className="TPC-"/>
             </div>
