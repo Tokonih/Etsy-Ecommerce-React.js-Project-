@@ -5,6 +5,7 @@ import Product from './Product';
 import Users from './Users';
 import Createproduct from './Createproduct';
 import Editproduct from './Editproduct';
+import Createusers from './Createusers';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path="/Users" element={<Users/>} />
                 <Route exact path="/Createproduct" element={<Createproduct/>} />
                 <Route exact path="/Editproduct/:id" element={<Editproduct/>} />
+                <Route exact path="/Createusers" element={<Createusers/>} />
             </Routes>
         </BrowserRouter>
      

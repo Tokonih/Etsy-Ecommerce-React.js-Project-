@@ -29,7 +29,7 @@ function Dashboard() {
           <Link className="link" to="/Createproduct">
             Create Product
           </Link>
-          <Link className="link">Create User </Link>
+          <Link className="link" to="/Createusers">Create User </Link>
         </div>
         <div className="Dash-right">
           <h1>Etsy</h1>
@@ -50,7 +50,23 @@ function Dashboard() {
             </div>
           </div>
           <div>
-            {/* <h1>Products</h1> */}
+            <h1>Products</h1>
+            <div className="find-something-row">
+            {totalProduct && totalProduct.map((data)=>(
+                     <div className="find-something-card" key={totalProduct.id}>
+                     <img src={data.image} alt="" />
+                     <p>{data.description}</p>
+                     <h3>₦{data.price}</h3>
+                     <p>{data.name}</p>
+                    
+                   </div>
+            ))}
+         
+
+          
+
+         
+        </div>
           </div>
         </div>
       </div>
