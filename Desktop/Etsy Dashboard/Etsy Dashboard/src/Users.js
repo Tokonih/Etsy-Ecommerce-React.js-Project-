@@ -7,11 +7,7 @@ function Users() {
     fetch(`http://159.65.21.42:9000/users`)
     .then((resp)=> resp.json())
     .then((data)=>{
-      // const user = data.map((thisuser)=>{
-      //   return{...thisuser, category:cat}
-      // })
       setUsers(data)
-      // console.log(data)
     })
   }
 
@@ -67,23 +63,6 @@ function Users() {
 
             </tr>
             ))}
-                
-
-
-            
-            {/* <tr>{users && users.map((thisuser)=>(
-              <div>
-                    <td>{thisuser.name}</td>
-                <td>{thisuser.email}</td>
-                <td>{thisuser.phone}</td>
-                <td>{thisuser.password}</td>
-                <td><button className="edit">Edit</button> <button className="delete">Delete</button></td>
-              </div>
-            ))}
-            <tr/> */}
-                
-            {/* </tr> */}
-
           </table>
 
          </div>

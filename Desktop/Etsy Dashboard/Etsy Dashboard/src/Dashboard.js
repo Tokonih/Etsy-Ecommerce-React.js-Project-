@@ -12,12 +12,22 @@ function Dashboard() {
       console.log(info)
     } )
   }
+
+  const [users, setUsers] = useState([])
+  const getUser = ()=>{
+    fetch(`http://159.65.21.42:9000/users`)
+    .then((resp)=> resp.json())
+    .then((data)=>{
+      setUsers(data)
+    })
+  }
   //.catch((err)=>{
    // console.log(err.message)
  // })
 
   useEffect(()=>{
       getData("Tokonih")
+      getUser()
   }, [])
   return (
     <div className="Dash">
@@ -41,7 +51,7 @@ function Dashboard() {
                 </div>
             {/* })} */}
             
-            <div className="TU"><h2>Total Users: <span>5432</span></h2>
+            <div className="TU"><h2>Total Users: <span>{users.length}</span></h2>
                 <IoPeopleOutline  className="TPC-"/>
             </div>
             <div className="TPC">
