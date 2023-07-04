@@ -14,20 +14,21 @@ import img5 from "./img/il_300x300.1523969724_3laf.jpg";
 import img6 from "./img/il_300x300.678757364_gnj7.jpg";
 import img7 from "./img/il_340x270.1013457467_9b2h.jpg";
 // import img7 from "./img/il_340x270.1034789314_656r.jpg"
-import img8 from "./img/il_340x270.1060198212_3316.jpg";
-import img9 from "./img/il_340x270.1068804108_fh76.jpg";
-import img10 from "./img/il_340x270.1090023744_sd7k.jpg";
-import img11 from "./img/il_340x270.1106773631_ydec.jpg";
-import img12 from "./img/il_340x270.1110816360_22l8.jpg";
-import img13 from "./img/il_300x300.678757364_gnj7.jpg";
-import img14 from "./img/il_340x270.1013457467_9b2h.jpg";
-import img15 from "./img/il_340x270.1278458743_5bch.jpg";
-import img16 from "./img/il_340x270.1376263334_1gaj.jpg";
-import img17 from "./img/il_340x270.1273225291_d53z.jpg";
-import img18 from "./img/il_340x270.1277722923_8dcf.jpg";
-import img19 from "./img//il_340x270.1376263334_1gaj.jpg";
+// import img8 from "./img/il_340x270.1060198212_3316.jpg";
+// import img9 from "./img/il_340x270.1068804108_fh76.jpg";
+// import img10 from "./img/il_340x270.1090023744_sd7k.jpg";
+// import img11 from "./img/il_340x270.1106773631_ydec.jpg";
+// import img12 from "./img/il_340x270.1110816360_22l8.jpg";
+// import img13 from "./img/il_300x300.678757364_gnj7.jpg";
+// import img14 from "./img/il_340x270.1013457467_9b2h.jpg";
+// import img15 from "./img/il_340x270.1278458743_5bch.jpg";
+// import img16 from "./img/il_340x270.1376263334_1gaj.jpg";
+// import img17 from "./img/il_340x270.1273225291_d53z.jpg";
+// import img18 from "./img/il_340x270.1277722923_8dcf.jpg";
+// import img19 from "./img//il_340x270.1376263334_1gaj.jpg";
 import { Link } from "react-router-dom";
 import Product from "./Pages/Product";
+import { useEffect, useState } from "react";
 // import img14 from "./img/il_340x270.1013457467_9b2h.jpg"
 // import img15 from "./img/il_340x270.1278458743_5bch.jpg"
 // import img16 from "./img/il_340x270.1376263334_1gaj.jpg"
@@ -35,6 +36,23 @@ import Product from "./Pages/Product";
 // import img18 from "./img/il_340x270.1277722923_8dcf.jpg"
 // import img19 from "./img//il_340x270.1376263334_1gaj.jpg"
 function Body() {
+  const [category, setCategory]= useState([])
+  const getprod =(category)=>{
+    fetch("http://159.65.21.42:9000/products")
+    .then((resp)=>resp.json())
+    .then((data)=>{
+      const getcategory = data.filter((prod)=> prod.category === category )
+      console.log(getcategory)
+      setCategory(getcategory)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  useEffect(()=>{
+    getprod("Tokonih")
+  }, [])
+
   return (
     <div className="body">
       <div className="women">
@@ -102,16 +120,20 @@ function Body() {
           </div>
         </div>
         <div className="find-something-row">
-          <div className="find-something-card">
-            <img src={img7} alt="" />
-            <IoHeartOutline className="find-heart" />
-            <p>Cute Summer Dress, Mini Dress, Ladies</p>
-            <h3>USD 26.24</h3>
-            <p>Ad by LotuastudiosbyDC</p>
-            <button className="free-delivery">FREE Delivery</button>
-          </div>
+          {category.map((shop)=>(
+                <Link to={`/Shop/${shop._id}`} className="find-something-card" key={category.id}>
+                <img src={shop.image} alt="" />
+                <IoHeartOutline className="find-heart" />
+                <p>{shop.description}</p>
+                <h3>USD{shop.price}</h3>
+                <p>{shop.name}</p>
+                <p>{shop._id}</p>
+                <button className="free-delivery">FREE Delivery</button>
+              </Link>
+          ))}
+          
 
-          <div className="find-something-card">
+          {/* <div className="find-something-card">
             <img src={img8} alt="" />
             <IoHeartOutline className="find-heart" />
             <p>Cute Summer Dress, Mini Dress, Ladies</p>
@@ -457,7 +479,7 @@ function Body() {
             <h3>USD 26.24</h3>
             <p>Ad by LotuastudiosbyDC</p>
             <button className="free-delivery">FREE Delivery</button>
-          </div>
+          </div> */}
         </div>
       </div>
 

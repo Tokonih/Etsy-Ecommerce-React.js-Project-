@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
 import img from "../img/il_300x300.1049222468_dsnp.jpg";
@@ -8,71 +9,47 @@ import {
   IoStarSharp,
   IoCheckmark,
 } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 // import HeroSlider, { Slide } from "hero-slider";
 function Product() {
+  const [singleProduct, setSingleProduct]= useState({})
+  const {id}= useParams()
+
+  const getprod = ()=>{
+    fetch(`http://159.65.21.42:9000/product/${id}`)
+    .then((resp)=> resp.json())
+    .then((data)=>{
+      // const getsingleproduct = data.find((dress)=> dress.id === itemid)
+      setSingleProduct(data)
+      console.log(data)
+      // console.log(getsingleproduct)
+    })
+  }
+  useEffect(()=>{
+    getprod()
+  },[])
   return (
     <div>
       <Navigation />
       <div className="Product">
         <div className="single-product">
           <div className="sideimg">
-            <img src={img} alt="" />
-            <img src={img} alt="" />
-            <img src={img} alt="" />
-            <img src={img} alt="" />
-            <img src={img} alt="" />
-            <img src={img} alt="" />
+            <img src={singleProduct.image} alt="" />
+            <img src={singleProduct.image} alt="" />
+            <img src={singleProduct.image} alt="" />
+            <img src={singleProduct.image} alt="" />
+            <img src={singleProduct.image} alt="" />
+            <img src={singleProduct.image} alt="" />
           </div>
           <div className="middleimg">
-            {/* <HeroSlider 
-                  slidingAnimation = "left_to_right"
-                  orientation="horizontal"
-                  initialSlide= {1}
-                  onBeforeChnage= {(previousSlide, nextSlide) => console.log("onBeforeChnage", previousSlide, nextSlide)}
-                  onchange={nextSlide => console.log("onchange", nextSlide)}
-                  onAfterChange = {nextSlide=>console.log("onAfterChange", nextSlide) }
-                  settings={{
-                    slidingDuration: 250, 
-                    slidingDelay: 100,
-                    ShouldAutoplay: true,
-                    shouldDisplayButton: true,
-                    autoplayDuration:5000,
-                    height:"500vh"
-                  }}
-            >
-               <Slide
-                background={{
-                  backgroundImage: `url(${img})`,
-                  backgroundAttachment: "fixed",
-                }}
-              />
 
-              <Slide
-                background={{
-                  backgroundImage: `url(${img2})`,
-                  backgroundAttachment: "fixed",
-                }}
-              />
-
-              <Slide
-                background={{
-                  backgroundImage: `url(${img3})`,
-                  backgroundAttachment: "fixed",
-                }}
-              />
-
-              <Slide
-                background={{
-                  backgroundImage: `url(${img2})`,
-                  backgroundAttachment: "fixed",
-                }}
-              />
-
-            </HeroSlider> */}
-            <button><IoChevronBackOutline/></button>
-            <img src={img} alt="" />
-            <button><IoChevronForwardSharp/></button>
+              <div>
+                  <button><IoChevronBackOutline/></button>
+                  <img src={singleProduct.image} alt="" />
+                  <button><IoChevronForwardSharp/></button>
+                  </div>
+            
           </div>
           <div className="right-details">
             <div>
