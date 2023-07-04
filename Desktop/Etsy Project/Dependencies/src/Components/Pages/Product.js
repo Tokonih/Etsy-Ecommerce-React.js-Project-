@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 function Product() {
   const [singleProduct, setSingleProduct]= useState({})
   const {id}= useParams()
+  const [select, setSelect] = useState("")
+  const [err, setErr]= useState(false)
 
   const getprod = ()=>{
     fetch(`http://159.65.21.42:9000/product/${id}`)
@@ -26,6 +28,17 @@ function Product() {
       // console.log(getsingleproduct)
     })
   }
+
+  // const selectedColor = select
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+      if(select===""){
+        setErr(true)
+        return
+      }
+  }
+
   useEffect(()=>{
     getprod()
   },[])
@@ -43,27 +56,22 @@ function Product() {
             <img src={singleProduct.image} alt="" />
           </div>
           <div className="middleimg">
-
-              <div>
-                  <button><IoChevronBackOutline/></button>
-                  <img src={singleProduct.image} alt="" />
-                  <button><IoChevronForwardSharp/></button>
-                  </div>
-            
+              <button><IoChevronBackOutline/></button>
+              <img src={singleProduct.image} alt="" />
+              <button><IoChevronForwardSharp/></button>
           </div>
           <div className="right-details">
             <div>
               <p className="low">Low in stock, only 2 left and in 2 baskets</p>
               <div className="prdprice">
-                <h2>USD 67.25 </h2>
+                <h2>USD {singleProduct.price}</h2>
                 <p>
                   <s>USD 74.95</s>(10% Off)
                 </p>
               </div>
-              <p>Local taxes included (where applicable)</p>
+              <p>{singleProduct.name}</p>
               <p>
-                African Ankara Print Style Smock Elastic Waist Maxi Dress Ankle
-                Length Bell Sleeve Black Yellow
+                {singleProduct.description}
               </p>
               <p>
                 AlkebulanLifestyle <IoStarSharp />
@@ -80,13 +88,15 @@ function Product() {
                 <IoStarSharp className="primary-start" />{" "}
               </p>
               <div className="select-color">
-                <form action="">
-                  <select placeholder="Select a color">
+                <form action="" onSubmit={handleSubmit}>
+                  <select placeholder="Select a color" onChange={(e)=>setSelect(e.target.value)} value={select}>
                     <option value="">Select a color</option>
                     <option value="yello">Yellow</option>
                     <option value="pink">Pink</option>
                     <option value="red">Rd</option>
                   </select>
+                  {err===true && select===""? <span>Select a color</span> : select===null}
+                  
                   <button >Add to cart</button>
                 </form>
               </div>

@@ -121,13 +121,13 @@ function Body() {
         </div>
         <div className="find-something-row">
           {category.map((shop)=>(
-                <Link to={`/Shop/${shop._id}`} className="find-something-card" key={category.id}>
+                <Link to={`/Shop/${shop.category}/${shop._id}`} className="find-something-card" key={category.id}>
                 <img src={shop.image} alt="" />
                 <IoHeartOutline className="find-heart" />
                 <p>{shop.description}</p>
                 <h3>USD{shop.price}</h3>
                 <p>{shop.name}</p>
-                <p>{shop._id}</p>
+                {/* <p>{shop._id}</p> */}
                 <button className="free-delivery">FREE Delivery</button>
               </Link>
           ))}
