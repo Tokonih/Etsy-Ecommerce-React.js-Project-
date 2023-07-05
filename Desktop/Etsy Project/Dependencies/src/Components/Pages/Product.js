@@ -10,6 +10,8 @@ import {
   IoCheckmark,
 } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { DressContext } from "../Context/DressContext";
+import { useContext } from "react";
 
 // import HeroSlider, { Slide } from "hero-slider";
 function Product() {
@@ -17,6 +19,8 @@ function Product() {
   const {id}= useParams()
   const [select, setSelect] = useState("")
   const [err, setErr]= useState(false)
+  const contextData = useContext(DressContext)
+  const {cart, setCart}= contextData
 
   const getprod = ()=>{
     fetch(`http://159.65.21.42:9000/product/${id}`)
@@ -33,11 +37,27 @@ function Product() {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-      if(select===""){
-        setErr(true)
-        return
-      }
+      // if(select===""){
+      //   setErr(true)
+      //   return
+      // }
   }
+
+  const handleCart = (dress)=>{
+      const existingCartData = [...cart];
+      const CheckIfDressExist = existingCartData.find((item)=>item._id === dress._id)
+      if(CheckIfDressExist){
+        alert('Item already in cart')
+        return;
+      }
+      const newItem = { ...dress, quantity:1, totalPrice:dress.price}
+      existingCartData.push(newItem)
+      setCart(existingCartData)
+      localStorage.setItem('user-cart', JSON.stringify(existingCartData))
+      alert('Item added to cart')
+  }
+
+
 
   useEffect(()=>{
     getprod()
@@ -97,7 +117,7 @@ function Product() {
                   </select>
                   {err===true && select===""? <span>Select a color</span> : select===null}
                   
-                  <button >Add to cart</button>
+                  <button onClick={()=>handleCart(singleProduct)}>Add to cart</button>
                 </form>
               </div>
               <div className="star-seller">

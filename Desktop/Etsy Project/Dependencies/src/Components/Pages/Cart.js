@@ -6,11 +6,18 @@ import {
   IoEarthSharp,
 } from "react-icons/io5";
 import img from "../img/grid 5.jpg";
+import { useContext } from "react";
+import { DressContext  } from "../Context/DressContext";
 function Cart() {
+  const contextData = useContext(DressContext)
+  const {cart, setCart} = contextData
   return (
     <div>
       <Navigation />
-      <div className="cart-page">
+      <div>
+        {
+          cart.length ? (
+            <div className="cart-page">
         <div className="oh-dear">
           <p>
             Oh dear. You can't add this listing to your basket. You've already
@@ -18,7 +25,7 @@ function Cart() {
           </p>
         </div>
         <div className="item-num">
-          <h1>1 item in the cart </h1>
+          <h1>{cart.length} item(s) in the cart </h1>
         </div>
         <div className="buy-conf">
           <p>
@@ -29,22 +36,24 @@ function Cart() {
         </div>
 
         <div className="payment">
-          <div className="payment-details">
+          {cart.map((item)=>(
+        
+          <div className="payment-details" key={item._id}>
             <div>
               <div>
-                <p>Brand Name</p>
-                <p>Contact shop</p>
+                <p>{item.name}</p>
+                <p>{item.category}</p>
               </div>
               <p>Buy 2 more items from this shop to get 15% off.</p>
               <div className="price-details">
                 <div className="prod">
                   <div>
                   <div className="proddsc">
-                    <img src={img} alt="" />
+                    <img src={item.image} alt="" />
                    
                     <div>
-                      <p>Product Dsc</p>
-                      <p>Product colour: color</p>
+                      <p>{item.description}</p>
+                      <p>Product colour: {item.color}</p>
                       <p>Size: </p>
                       <p>
                         <IoPencilSharp /> Edit
@@ -74,7 +83,7 @@ function Cart() {
 
                   <div className="prices">
                     <div>
-                      <h3>USD 67.45</h3>
+                      <h3>USD {item.price}</h3>
                       <p>
                         <s>74.95</s>
                       </p>
@@ -146,7 +155,7 @@ function Cart() {
               <div>
                 <div className="items">
                   <h3>Items(s) total</h3>
-                  <p>USD 74.95</p>
+                  <p>USD {item.totalPrice}</p>
                   <h3>Shop discount</h3>
                   <p>-USD 7.50</p>
                 </div>
@@ -159,8 +168,8 @@ function Cart() {
                 </div>
                 <hr />
                 <div className="total-price">
-                  <h3>Total (1 item)</h3>
-                  <h3>USD 104.17</h3>
+                  <h3>Total ({item.length} item(s))</h3>
+                  <h3>USD {item.totalPrice}</h3>
                 </div>
               </div>
               <button className="procees">Proceed to Checkout </button>
@@ -176,6 +185,7 @@ function Cart() {
               </div>
             </div>
           </div>
+          ))}
       
         </div>
         <hr />
@@ -210,6 +220,13 @@ function Cart() {
           </div>
          </div>
         </div>
+      </div>
+          ) : ( 
+          <> <h1>No item in cart</h1></>
+          )
+        }
+      
+
       </div>
     </div>
   );
