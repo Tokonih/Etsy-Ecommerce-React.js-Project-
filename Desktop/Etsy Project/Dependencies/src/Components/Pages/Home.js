@@ -9,8 +9,10 @@ import img2 from "../img/gift for him.jpg";
 import img3 from "../img/girt for her.jpg";
 import img4 from "../img/personalised gift.jpg";
 import img5 from "../img/wedding gift.jpg";
+import useFetch from "./useFetch";
 
 function Home() {
+  const {data3: category} = useFetch("http://159.65.21.42:9000/products")
   return (
     <div>
       <Navigation />
@@ -85,50 +87,17 @@ function Home() {
 
       <div className="bg-2">
         <div className="bg-row-2">
-          <div className="bg-row-2-grid">
-            <div className="bg-heart">
-              <IoHeartOutline />
-            </div>
-            <div className="gb-price">
-              <button>USD 106.24</button>
-            </div>
-          </div>
-
-          <div className="bg-row-2-grid-1">
-            <div className="bg-heart">
-              <IoHeartOutline />
-            </div>
-            <div className="gb-price">
-              <button>USD 106.24</button>
-            </div>
-          </div>
-
-          <div className="bg-row-2-grid-2">
-            <div className="bg-heart">
-              <IoHeartOutline />
-            </div>
-            <div className="gb-price">
-              <button>USD 106.24</button>
-            </div>
-          </div>
-
-          <div className="bg-row-2-grid-3">
-            <div className="bg-heart">
-              <IoHeartOutline />
-            </div>
-            <div className="gb-price">
-              <button>USD 106.24</button>
-            </div>
-          </div>
-
-          <div className="bg-row-2-grid-4">
-            <div className="bg-heart">
-              <IoHeartOutline />
-            </div>
-            <div className="gb-price">
-              <button>USD 106.24</button>
-            </div>
-          </div>
+            {category && category.map((item)=>(
+              <Link to={`/Shop/${item.category}/${item._id}`}>
+               <img src={item.image} alt="" />
+               <div className="bg-heart">
+                 <IoHeartOutline />
+               </div>
+               <div className="gb-price">
+                 <button>USD {item.price}</button>
+               </div>
+              </Link>
+            ))}
         </div>
       </div>
 
@@ -136,31 +105,15 @@ function Home() {
         <div className="popular-gift-interest">
           <h2>Shop our popular gift categories</h2>
           <div className="popular-gift-row">
-            <div className="popular-card">
-              <img src={img1} alt="" />
-
-              <p>Embroidery</p>
-            </div>
+            {category && category.map((item)=>(
 
             <div className="popular-card">
-              <img src={img2} alt="" />
-              <p>Embroidery</p>
+              <img src={item.image} alt="" />
+              <p>{item.name}</p>
             </div>
+            ))}
 
-            <div className="popular-card">
-              <img src={img3} alt="" />
-              <p>Embroidery</p>
-            </div>
-
-            <div className="popular-card">
-              <img src={img4} alt="" />
-              <p>Embroidery</p>
-            </div>
-
-            <div className="popular-card">
-              <img src={img5} alt="" />
-              <p>Embroidery</p>
-            </div>
+           
           </div>
         </div>
       </div>

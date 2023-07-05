@@ -2,8 +2,13 @@ import {IoLocationSharp, IoSearchSharp, IoHeartOutline, IoBasketOutline } from "
 import { Link } from "react-router-dom";
 import Cart from "../Components/Pages/Cart"
 import Signin from "./Pages/Signin";
+import { DressContext } from "./Context/DressContext";
+import { useContext } from "react";
 
 function Navigation(){
+
+    const contextData = useContext(DressContext)
+    const {cart, setCart}= contextData
     return(
         <div className="nav">
             <div className="nav-">
@@ -21,8 +26,8 @@ function Navigation(){
                 <IoSearchSharp className="heart"/>
                 </div>
                 <Link to="/Signin" element={<Signin/>} className="Sign-in"> Sign in</Link>
-                <Link className="heart"> <IoHeartOutline/> </Link>
-                <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline/></Link>
+                <Link className="heart"> <IoHeartOutline/> <span></span> </Link>
+                <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline/><span>{cart.length ? (cart.length) : ( null)}</span></Link>
             </div>
             <div className="nav2">
                 <Link className="nav2-">Jewellery & Accessories</Link>

@@ -41,8 +41,9 @@ function Product() {
       //   setErr(true)
       //   return
       // }
-  }
 
+
+  }
   const handleCart = (dress)=>{
       const existingCartData = [...cart];
       const CheckIfDressExist = existingCartData.find((item)=>item._id === dress._id)
@@ -56,6 +57,7 @@ function Product() {
       localStorage.setItem('user-cart', JSON.stringify(existingCartData))
       alert('Item added to cart')
   }
+
 
 
 

@@ -230,6 +230,8 @@ span{
   position: relative;
   /* line-height: 10px; */
   text-decoration: none;
+  padding: 5px;
+  color: black;
   /* box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9); */
 }
 
@@ -516,80 +518,11 @@ span{
   align-items: center;
   justify-content: center;
   padding: 1px;
-  visibility: hidden;
+  /* position: absolute;
+  top: 1;
+  visibility: hidden; */
 }
 
-.bg-left:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-left:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-1:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-1:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-2:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-2:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-3:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-3:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-4:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-4:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-5:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-5:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-right-grid-5:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-right-grid-5:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
 @media (max-width:1000px) {
   .Background{
     width: 100%;
@@ -650,126 +583,25 @@ span{
   gap: 20px;
 }
 
+.bg-row-2 img{
+    object-fit: contain;
+    height: 250px;
+}
+
 .bg-2{
   width: 100%;
   margin: auto;
 }
 
-.bg-row-2-grid:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid:hover {
+.bg-row-2 img:hover {
   box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
 }
 
-.bg-row-2-grid-1:hover .bg-heart {
+.bg-row-2 img:hover .bg-heart {
   visibility: visible;
   transition: 0.1s ease-in-out;
   /* transition: translatex ; */
 }
-.bg-row-2-grid-1:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-ow-2t-grid-2:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid-2:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-row-2-grid-3:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid-3:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-row-2-grid-4:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid-4:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-row-2-grid-5:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid-5:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9);
-}
-
-.bg-row-2-grid-5:hover .bg-heart {
-  visibility: visible;
-  transition: 0.1s ease-in-out;
-  /* transition: translatex ; */
-}
-.bg-row-2-grid-5:hover {
-  box-shadow: 2px 2px 10px rgba(126, 125, 125, 0.9)}
-
-  .bg-row-2-grid {
-    background-image: url(./Components/img/row1.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-  
-  .bg-row-2-grid-1 {
-    background-image: url(./Components/img/row2.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-  
-  .bg-row-2-grid-2 {
-    background-image: url(./Components/img/row3.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-  
-  .bg-row-2-grid-3 {
-    background-image: url(./Components/img/row4.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-  
-  .bg-row-2-grid-4 {
-    background-image: url(./Components/img/row5.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-  
-  .bg-row-2-grid-5 {
-    background-image: url(./Components/img/grid\ 6.jpg);
-    object-fit: contain;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
 
   .popular-gift{
     height: 500px;

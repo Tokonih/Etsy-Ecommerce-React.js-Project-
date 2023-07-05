@@ -6,52 +6,15 @@ import {
   IoHeartOutline,
   IoStar,
 } from "react-icons/io5";
-import img1 from "./img/il_300x300.1198790544_cc7f.jpg";
-import img2 from "./img/il_300x300.1049222468_dsnp.jpg";
-import img3 from "./img/il_300x300.1544978823_sdel.jpg";
-import img4 from "./img/il_300x300.3056818895_2d37.jpg";
-import img5 from "./img/il_300x300.1523969724_3laf.jpg";
-import img6 from "./img/il_300x300.678757364_gnj7.jpg";
-import img7 from "./img/il_340x270.1013457467_9b2h.jpg";
-// import img7 from "./img/il_340x270.1034789314_656r.jpg"
-// import img8 from "./img/il_340x270.1060198212_3316.jpg";
-// import img9 from "./img/il_340x270.1068804108_fh76.jpg";
-// import img10 from "./img/il_340x270.1090023744_sd7k.jpg";
-// import img11 from "./img/il_340x270.1106773631_ydec.jpg";
-// import img12 from "./img/il_340x270.1110816360_22l8.jpg";
-// import img13 from "./img/il_300x300.678757364_gnj7.jpg";
-// import img14 from "./img/il_340x270.1013457467_9b2h.jpg";
-// import img15 from "./img/il_340x270.1278458743_5bch.jpg";
-// import img16 from "./img/il_340x270.1376263334_1gaj.jpg";
-// import img17 from "./img/il_340x270.1273225291_d53z.jpg";
-// import img18 from "./img/il_340x270.1277722923_8dcf.jpg";
-// import img19 from "./img//il_340x270.1376263334_1gaj.jpg";
+
 import { Link } from "react-router-dom";
 import Product from "./Pages/Product";
 import { useEffect, useState } from "react";
-// import img14 from "./img/il_340x270.1013457467_9b2h.jpg"
-// import img15 from "./img/il_340x270.1278458743_5bch.jpg"
-// import img16 from "./img/il_340x270.1376263334_1gaj.jpg"
-// import img17 from "./img/il_340x270.1273225291_d53z.jpg"
-// import img18 from "./img/il_340x270.1277722923_8dcf.jpg"
-// import img19 from "./img//il_340x270.1376263334_1gaj.jpg"
-function Body() {
-  const [category, setCategory]= useState([])
-  const getprod =(category)=>{
-    fetch("http://159.65.21.42:9000/products")
-    .then((resp)=>resp.json())
-    .then((data)=>{
-      const getcategory = data.filter((prod)=> prod.category === category )
-      console.log(getcategory)
-      setCategory(getcategory)
-    }).catch((err)=>{
-      console.log(err)
-    })
-  }
+import useFetch from "./Pages/useFetch";
 
-  useEffect(()=>{
-    getprod("Tokonih")
-  }, [])
+function Body() {
+  const {data:category} = useFetch("http://159.65.21.42:9000/products")
+  const {data2:items} = useFetch("http://159.65.21.42:9000/products")
 
   return (
     <div className="body">
@@ -73,36 +36,13 @@ function Body() {
         <h2>Shop by interest</h2>
         <p>Dresses</p>
         <div className="shop-row">
-          <Link to="/Product" element={<Product/>} className="shop-card">
-            <img src={img1} alt="" />
-
-            <p>Embroidery</p>
+          {items && items.map((item)=>(
+          <Link to={`/Shop/${item.category}/${item._id}`} element={<Product/>} className="shop-card" key={item.id}>
+            <img src={item.image} alt="" />
+            <p>{item.name}</p>
           </Link>
+          ))}
 
-          <div className="shop-card">
-            <img src={img2} alt="" />
-            <p>Embroidery</p>
-          </div>
-
-          <div className="shop-card">
-            <img src={img3} alt="" />
-            <p>Embroidery</p>
-          </div>
-
-          <div className="shop-card">
-            <img src={img4} alt="" />
-            <p>Embroidery</p>
-          </div>
-
-          <div className="shop-card">
-            <img src={img5} alt="" />
-            <p>Embroidery</p>
-          </div>
-
-          <div className="shop-card">
-            <img src={img6} alt="" />
-            <p>Embroidery</p>
-          </div>
         </div>
       </div>
 
@@ -125,9 +65,8 @@ function Body() {
                 <img src={shop.image} alt="" />
                 <IoHeartOutline className="find-heart" />
                 <p>{shop.description}</p>
-                <h3>USD{shop.price}</h3>
+                <h3>USD { shop.price}</h3>
                 <p>{shop.name}</p>
-                {/* <p>{shop._id}</p> */}
                 <button className="free-delivery">FREE Delivery</button>
               </Link>
           ))}
