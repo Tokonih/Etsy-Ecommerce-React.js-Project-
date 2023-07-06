@@ -892,15 +892,17 @@ span{
   }
 
   .payment{
-    width: 100%;
+    width: 90%;
     height: 800px;
+    margin: auto;
+    display: flex;
   }
 
   .payment-details{
     height: 800px;
-    width: 75%;
+    width: 54%;
     margin: auto;
-    display: flex;
+    display: block;
     align-items: center;
     /* justify-content: space-between; */
     /* grid-template-columns: repeat(2, 1fr); */

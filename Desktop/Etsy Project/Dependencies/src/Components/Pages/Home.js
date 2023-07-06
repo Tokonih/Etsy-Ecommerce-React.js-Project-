@@ -3,12 +3,6 @@ import Navigation from "../Navigation";
 import { IoHeartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Body from "./Body";
-// import {IoHeartOutline} from "react-icons/io5";
-import img1 from "../img/anni gift.jpg";
-import img2 from "../img/gift for him.jpg";
-import img3 from "../img/girt for her.jpg";
-import img4 from "../img/personalised gift.jpg";
-import img5 from "../img/wedding gift.jpg";
 import useFetch from "./useFetch";
 
 function Home() {
@@ -40,51 +34,6 @@ function Home() {
               </div>
             </Link>
             ))}
-
-            {/* <div className="bg-right-grid-1">
-              <div className="bg-heart">
-                <IoHeartOutline />
-              </div>
-              <div className="gb-price">
-                <button>USD 106.24</button>
-              </div>
-            </div>
-
-            <div className="bg-right-grid-2">
-              <div className="bg-heart">
-                <IoHeartOutline />
-              </div>
-              <div className="gb-price">
-                <button>USD 106.24</button>
-              </div>
-            </div>
-
-            <div className="bg-right-grid-3">
-              <div className="bg-heart">
-                <IoHeartOutline />
-              </div>
-              <div className="gb-price">
-                <button>USD 106.24</button>
-              </div>
-            </div>
-
-            <div className="bg-right-grid-4">
-              <div className="bg-heart">
-                <IoHeartOutline />
-              </div>
-              <div className="gb-price">
-                <button>USD 106.24</button>
-              </div>
-            </div>
-
-            <div className="bg-right-grid-5">
-              <div className="bg-heart">
-                <IoHeartOutline />
-              </div>
-              <div className="gb-price">
-                <button>USD 106.24</button>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
@@ -95,10 +44,10 @@ function Home() {
               <Link to={`/Shop/${item.category}/${item._id}`}>
                <img src={item.image} alt="" />
                <div className="bg-heart">
-                 <IoHeartOutline />
+                 {/* <IoHeartOutline /> */}
                </div>
                <div className="gb-price">
-                 <button>USD {item.price}</button>
+                 {/* <button>USD {item.price}</button> */}
                </div>
               </Link>
             ))}
