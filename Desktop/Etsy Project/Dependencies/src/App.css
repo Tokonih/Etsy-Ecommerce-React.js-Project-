@@ -892,9 +892,9 @@ span{
   }
 
   .payment{
-    width: 90%;
-    height: 800px;
+    width: 85%;
     margin: auto;
+    /* height: 800px; */
     display: flex;
   }
 
@@ -948,8 +948,15 @@ span{
     /* background-color: red; */
     box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.9);
     padding: 10px;
+    margin-bottom: 100px;
+  }
+  .cartadd{
+  padding: 20px 40px;
   }
 
+  .cartreduce{
+    padding: 20px 40px;
+    }
   .prices{
     text-align: end;
     line-height: 40px;
@@ -961,7 +968,12 @@ span{
 
   .proddsc{
     display: flex;
+    gap: 10px;
     margin-bottom: 50px;
+  }
+
+  .prodname{
+    line-height: 0px;
   }
 
    .addbtn{
@@ -977,8 +989,11 @@ span{
  }
 
  .how-to-pay{
-  width: 30%;
+  width: 25%;
+  margin: auto;
   line-height: 30px;
+  position: static;
+  
  }
 
  .items{
