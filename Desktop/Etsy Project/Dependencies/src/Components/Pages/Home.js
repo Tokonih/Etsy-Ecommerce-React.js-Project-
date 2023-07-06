@@ -13,6 +13,7 @@ import useFetch from "./useFetch";
 
 function Home() {
   const {data3: category} = useFetch("http://159.65.21.42:9000/products")
+  const {data4:shop} = useFetch("http://159.65.21.42:9000/products")
   return (
     <div>
       <Navigation />
@@ -28,16 +29,19 @@ function Home() {
           </Link>
 
           <div className="bg-right">
-            <div className="bg-right-grid">
-              <div className="bg-heart">
+            {shop && shop.map((item)=>(
+            <Link to={`Shop/${item.category}/${item._id}`} className="bg-right-grid">
+              <img src={item.image} alt="" />
+              {/* <div className="bg-heart">
                 <IoHeartOutline />
-              </div>
+              </div> */}
               <div className="gb-price">
-                <button>USD 106.24</button>
+                {/* <button>USD {item.price}</button> */}
               </div>
-            </div>
+            </Link>
+            ))}
 
-            <div className="bg-right-grid-1">
+            {/* <div className="bg-right-grid-1">
               <div className="bg-heart">
                 <IoHeartOutline />
               </div>
@@ -80,7 +84,7 @@ function Home() {
               <div className="gb-price">
                 <button>USD 106.24</button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -107,10 +111,10 @@ function Home() {
           <div className="popular-gift-row">
             {category && category.map((item)=>(
 
-            <div className="popular-card">
+            <Link to={`/Shop/${item.category}/${item._id}`} className="popular-card">
               <img src={item.image} alt="" />
               <p>{item.name}</p>
-            </div>
+            </Link>
             ))}
 
            
