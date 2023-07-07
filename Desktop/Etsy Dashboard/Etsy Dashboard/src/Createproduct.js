@@ -47,19 +47,19 @@ function Createproduct() {
     <div className="Dash">
       <div className="Dashboard">
         <div className="Dash-left">
-         <button> <Link className="link" to="/" >Dashboard</Link></button>
-         <button> <Link className="link" to="/Product">Product </Link></button>
-          <button><Link className="link" to="/Users">Users</Link></button>
-          <button><Link className="link" to="/Createproduct">
+         <Link className="link" to="/" >Dashboard</Link>
+         <Link className="link" to="/Product">Product </Link>
+        <Link className="link" to="/Users">Users</Link>
+        <Link className="link" to="/Createproduct">
             Create Product
-          </Link></button>
-         <button> <Link className="link" to="/Createusers">Create User </Link></button>
+          </Link>
+        <Link className="link" to="/Createusers">Create User </Link>
         </div>
         <div className="Dash-right">
           <h1>Create Product</h1>
 
-          <div>
-             <form onSubmit={handleSubmit} className="createproduct">
+          <div  className="createproduct">
+             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name</label>
                     <input type="text" onChange={(e)=>setName(e.target.value)} value={name} />
@@ -83,7 +83,7 @@ function Createproduct() {
 
                 <div>
                     <label>Quantity</label>
-                    <input type="number" onChange={(e)=>setQuantity(e.target.value)} value={quantity}/>
+                    <input type="number" className="textarea" onChange={(e)=>setQuantity(e.target.value)} value={quantity}/>
                     {err===true && quantity ===""?  <span>Quantity Required</span> : quantity === null}
                 </div>
 
@@ -98,7 +98,9 @@ function Createproduct() {
                     <textarea type="text" onChange={(e)=> setDescription(e.target.value)} value={description}/>
                     {err=== true && description===""? <span>Description required</span> : description ===null}
                 </div>
-                <button>Submit</button>
+                <div  className="createbtn">
+                <button>Create product</button>
+                </div>
              </form>
           </div>
 

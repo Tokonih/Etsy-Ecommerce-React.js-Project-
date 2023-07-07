@@ -45,7 +45,7 @@ function Product() {
           <Link className="link" to="/Createproduct">
             Create Product
           </Link>
-          <Link className="link" to="Createusers">Create User </Link>
+          <Link className="link" to="/Createusers">Create User </Link>
         </div>
         <div className="Dash-right">
           <h1>Product</h1>

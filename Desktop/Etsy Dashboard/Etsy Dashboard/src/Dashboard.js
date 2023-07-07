@@ -21,13 +21,20 @@ function Dashboard() {
       setUsers(data)
     })
   }
-  //.catch((err)=>{
-   // console.log(err.message)
- // })
+
+  const [cart, setCart]= useState([])
+  const cartData = ()=>{
+   const localData =  JSON.parse(localStorage.getItem("tk-food")) 
+    setCart(localData)
+    console.log(localData)
+  }
+
+
 
   useEffect(()=>{
       getData("Tokonih")
       getUser()
+      cartData()
   }, [])
   return (
     <div className="Dash">
@@ -55,7 +62,7 @@ function Dashboard() {
                 <IoPeopleOutline  className="TPC-"/>
             </div>
             <div className="TPC">
-                    <h2>Total Product in cart: <span>5432</span></h2>
+                    <h2>Total Product in cart: <span>{}</span></h2>
                <IoCartOutline className="TPC-"/>
             </div>
           </div>
