@@ -15,55 +15,58 @@ import { useContext } from "react";
 
 // import HeroSlider, { Slide } from "hero-slider";
 function Product() {
-  const [singleProduct, setSingleProduct]= useState({})
-  const {id}= useParams()
-  const [select, setSelect] = useState("")
-  const [err, setErr]= useState(false)
-  const contextData = useContext(DressContext)
-  const {cart, setCart}= contextData
+  const [singleProduct, setSingleProduct] = useState({});
+  const { id } = useParams();
+  const [select, setSelect] = useState("");
+  const [err, setErr] = useState(false);
+  const contextData = useContext(DressContext);
+  const { cart, setCart } = contextData;
 
-  const getprod = ()=>{
+  const getprod = () => {
     fetch(`http://159.65.21.42:9000/product/${id}`)
-    .then((resp)=> resp.json())
-    .then((data)=>{
-      // const getsingleproduct = data.find((dress)=> dress.id === itemid)
-      setSingleProduct(data)
-      console.log(data)
-      // console.log(getsingleproduct)
-    })
-  }
+      .then((resp) => resp.json())
+      .then((data) => {
+        // const getsingleproduct = data.find((dress)=> dress.id === itemid)
+        setSingleProduct(data);
+        console.log(data);
+        // console.log(getsingleproduct)
+      });
+  };
 
   // const selectedColor = select
 
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-      // if(select===""){
-      //   setErr(true)
-      //   return
-      // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+ 
+  };
+  const handleCart = (dress) => {
+    if (!select) {
+      setErr(true);
+      return;
+    }
+    const existingCartData = [...cart];
+    const CheckIfDressExist = existingCartData.find(
+      (item) => item._id === dress._id
+    );
+    if (CheckIfDressExist) {
+      alert("Item already in cart");
+      return;
+    }
+    const newItem = {
+      ...dress,
+      quantity: 1,
+      totalPrice: dress.price,
+      select: select,
+    };
+    existingCartData.push(newItem);
+    setCart(existingCartData);
+    localStorage.setItem("user-cart", JSON.stringify(existingCartData));
+    alert("Item added to cart");
+  };
 
-
-  }
-  const handleCart = (dress)=>{
-      const existingCartData = [...cart];
-      const CheckIfDressExist = existingCartData.find((item)=>item._id === dress._id)
-      if(CheckIfDressExist){
-        alert('Item already in cart')
-        return;
-      }
-      const newItem = { ...dress, quantity:1, totalPrice:dress.price}
-      existingCartData.push(newItem)
-      setCart(existingCartData)
-      localStorage.setItem('user-cart', JSON.stringify(existingCartData))
-      alert('Item added to cart')
-  }
-
-
-
-
-  useEffect(()=>{
-    getprod()
-  },[])
+  useEffect(() => {
+    getprod();
+  }, []);
   return (
     <div>
       <Navigation />
@@ -78,9 +81,13 @@ function Product() {
             <img src={singleProduct.image} alt="" />
           </div>
           <div className="middleimg">
-              <button><IoChevronBackOutline/></button>
-              <img src={singleProduct.image} alt="" />
-              <button><IoChevronForwardSharp/></button>
+            <button>
+              <IoChevronBackOutline />
+            </button>
+            <img src={singleProduct.image} alt="" />
+            <button>
+              <IoChevronForwardSharp />
+            </button>
           </div>
           <div className="right-details">
             <div>
@@ -92,9 +99,7 @@ function Product() {
                 </p>
               </div>
               <p>{singleProduct.name}</p>
-              <p>
-                {singleProduct.description}
-              </p>
+              <p>{singleProduct.description}</p>
               <p>
                 AlkebulanLifestyle <IoStarSharp />
                 <IoStarSharp />
@@ -111,15 +116,25 @@ function Product() {
               </p>
               <div className="select-color">
                 <form action="" onSubmit={handleSubmit}>
-                  <select placeholder="Select a color" onChange={(e)=>setSelect(e.target.value)} value={select}>
+                  <select
+                    placeholder="Select a color"
+                    onChange={(e) => setSelect(e.target.value)}
+                    value={select}
+                  >
                     <option value="">Select a color</option>
                     <option value="yello">Yellow</option>
                     <option value="pink">Pink</option>
                     <option value="red">Rd</option>
                   </select>
-                  {err===true && select===""? <span>Select a color</span> : select===null}
-                  
-                  <button onClick={()=>handleCart(singleProduct)}>Add to cart</button>
+                  {err === true && select === "" ? (
+                    <span>Select a color</span>
+                  ) : (
+                    select === null
+                  )}
+
+                  <button onClick={() => handleCart(singleProduct)}>
+                    Add to cart
+                  </button>
                 </form>
               </div>
               <div className="star-seller">

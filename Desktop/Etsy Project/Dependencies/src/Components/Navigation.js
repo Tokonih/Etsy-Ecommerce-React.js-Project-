@@ -27,7 +27,7 @@ function Navigation(){
                 </div>
                 <Link to="/Signin" element={<Signin/>} className="Sign-in"> Sign in</Link>
                 <Link className="heart"> <IoHeartOutline/> <span></span> </Link>
-                <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline/><span>{cart.length ? (cart.length) : ( null)}</span></Link>
+                <Link to="/Cart" element={<Cart/>} className="heart"><IoBasketOutline className="cartbag"/><span className="cartspan">{cart.length ? (cart.length) : ( null)}</span></Link>
             </div>
             <div className="nav2">
                 <Link className="nav2-" to='/Shop'>Jewellery & Accessories</Link>

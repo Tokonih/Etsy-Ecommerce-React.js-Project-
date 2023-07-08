@@ -39,6 +39,7 @@ function Register() {
       .then((resp) => resp.json)
       .then((data) => {
         alert("user created");
+        // Navigate("/Signin")
         console.log(data);
       })
       .catch((err) => {
@@ -146,7 +147,7 @@ function Register() {
         </div>
 
         <div className="close">
-          <Link to="/Signin"> X</Link>
+          <Link to="/Signin" className="a"> X</Link>
         </div>
       </div>
     </div>

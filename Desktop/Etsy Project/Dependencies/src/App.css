@@ -58,6 +58,16 @@ span{
   font-size: 18px;
 }
 
+.cartspan{
+  position: absolute;
+  top: .5;
+  font-size: 15px;
+}
+
+.cartbag{
+  font-size: 40px;
+}
+
 .heart {
   font-size: 25px;
   color: black;
@@ -1132,15 +1142,23 @@ span{
 }
 
  .close{
+
   position: absolute;
  }
 
+ .close a{
+  font-size: 40px;
+  color: white;
+
+  text-decoration: none;
+ }
  .wrapper input{
   display: block;
   width: 95%;
   margin: auto;
-  height: 40px;
+  height: 20px;
   border-radius: 5px;
+  padding: 10px;
   /* box-shadow: 2px 2px 5px rgba(67, 66, 66, 0.4); */
   border-color: rgba(67, 66, 66, 0.4);
  }

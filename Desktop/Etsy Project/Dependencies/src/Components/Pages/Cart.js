@@ -5,7 +5,6 @@ import {
   IoPricetag,
   IoEarthSharp,
 } from "react-icons/io5";
-import img from "../img/grid 5.jpg";
 import { useContext } from "react";
 import { DressContext  } from "../Context/DressContext";
 function Cart() {
@@ -39,25 +38,17 @@ function Cart() {
     localStorage.setItem("user-cart", JSON.stringify(increaseBtn))
   }
 
-  // const decreaseitem = (increase)=>{
-  //   const existingData = [ ...cart];
-  //   const decreaseBtn = existingData.map((data)=>{
-  //     if(data._d === increase._id){
-  //       if (increase.quantity > 1){
-  //         increase.quantity -=1;
-  //         increase.totalPrice = increase.price * increase.quantity
-  //       }
-        
-  //     }
-  //     return data;
-  //   });
-  //   setCart(decreaseBtn)
-  //   localStorage.setItem("user-cart", JSON.stringify(decreaseBtn))
-  // }
+  const remove = (id) =>{
+   const updatecart = cart.filter((cartitem)=> cartitem._id !== id)
+   setCart(updatecart)
+   localStorage.setItem("user-cart", JSON.stringify(updatecart))
+    
+  }
+
 
   const grandTotal = cart.map((grand)=> grand.totalPrice).reduce((a,b)=>{
     return(a + b)
-  })
+  }, 0)
   return (
     <div>
       <Navigation />
@@ -107,7 +98,7 @@ function Cart() {
                       </p>
                       <div className="prodbtn">
                         <button >Save for Later</button>
-                        <button>Remove</button>
+                        <button onClick={()=>remove(item._id)}>Remove</button>
                       </div>
                     </div>
                     </div>
@@ -248,7 +239,7 @@ function Cart() {
         }
 
       </div>
-    // </div>
+    </div>
   );
 }
 export default Cart;
