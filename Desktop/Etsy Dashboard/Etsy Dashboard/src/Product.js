@@ -14,7 +14,7 @@ function Product() {
             method:"DELETE",
           }).then((resp)=> {
             alert("Delete successfull")
-            window.location.reload()
+            // window.location.reload()
           }).catch((err)=>{
             console.log(err.message)
           })
