@@ -68,8 +68,28 @@ function Dashboard() {
           </div>
           <div>
             <h1>Products</h1>
-            <div className="find-something-row">
+            {/* <div className="find-something-row"> */}
+
+            <table>
+            <tr >
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Description</th>
+            </tr>
+
             {totalProduct && totalProduct.map((data)=>(
+              <tr >
+                <td>{data.name}</td>
+                <td>{data.price}</td>
+                <img src={data.image} style={{width: "100px", height: "100px", objectFit: "cover"}} alt="" />
+                <td>{data.description}</td>
+                {/* <td><button className="edit" >Edit</button> <button className="delete" onClick={()=> deleteUser(use._id)}>Delete</button></td> */}
+
+            </tr>
+            ))}
+          </table>
+            {/* {totalProduct && totalProduct.map((data)=>(
                      <div className="find-something-card" key={totalProduct.id}>
                      <img src={data.image} alt="" />
                      <p>{data.description}</p>
@@ -77,7 +97,7 @@ function Dashboard() {
                      <p>{data.name}</p>
                     
                    </div>
-            ))}
+            ))} */}
          
 
           
@@ -87,7 +107,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

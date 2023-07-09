@@ -12,10 +12,19 @@ function Product() {
         if(window.confirm("Do you want to delete ?")){
           fetch(`http://159.65.21.42:9000/product/${id}`,{
             method:"DELETE",
-          }).then((resp)=> {
-            alert("Delete successfull")
-            // window.location.reload()
-          }).catch((err)=>{
+          })
+          .then((resp)=> {
+            if(resp.ok){
+              setProduct((prevProduct) =>
+                prevProduct.filter((products)=> products._id !== id)
+              );
+              alert(`Delete Successful`)
+            
+            }else{
+              throw new Error(`failed to delete product`)
+            }
+          })
+          .catch((err)=>{
             console.log(err.message)
           })
         }
@@ -52,7 +61,7 @@ function Product() {
           
           <div className="find-something-row">
             {product && product.map((data)=>(
-                     <div className="find-something-card" key={product.id}>
+                     <div className="find-something-card" key={data.id}>
                      <img src={data.image} alt="" />
                      <p>{data.description}</p>
                      <h3>₦{data.price}</h3>

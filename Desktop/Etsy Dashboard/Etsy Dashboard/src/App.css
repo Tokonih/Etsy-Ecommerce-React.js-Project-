@@ -199,11 +199,12 @@ table{
 }
 
 td, th{
+  width: .5%;
   text-align: center;
 }
 
 tr:nth-child(even){
-  background-color: whitesmoke;
+  background-color:#d7e6f5;
 }
 
 /* Create Product Form */
@@ -262,13 +263,15 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid 
+  #d7e6f5;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: 
+#d7e6f5;
 }
 
 .link{
