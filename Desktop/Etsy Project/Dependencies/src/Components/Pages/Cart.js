@@ -121,7 +121,7 @@ function Cart() {
 
                   <div className="prices">
                     <div>
-                      <h3>USD {item.price}</h3>
+                      <h3>USD {item.totalPrice}</h3>
                       <p>
                         <s>74.95</s>
                       </p>
