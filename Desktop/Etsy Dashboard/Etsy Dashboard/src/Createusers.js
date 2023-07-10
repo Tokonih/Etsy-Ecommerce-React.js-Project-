@@ -11,7 +11,7 @@ function Createusers() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name === "" || email === "" || phone === "" || password === "") {
-      alert("not working");
+      alert("Fill details");
       setErr(true);
       return;
     }
