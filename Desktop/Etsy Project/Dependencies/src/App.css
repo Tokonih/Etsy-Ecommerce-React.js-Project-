@@ -956,7 +956,9 @@ span{
   }
 
   .middleimg img{
-    width: 100%;
+    height: 830px;
+    /* width: 90%; */
+   object-fit: contain;
   }
 
   .right-details{

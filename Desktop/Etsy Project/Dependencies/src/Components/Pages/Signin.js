@@ -124,7 +124,7 @@ function Signin() {
         </div>
 
         <div className="close">
-          {/* <button onClick={() => Navigate(-1)}>X</button> */}
+          <button onClick={() => Navigate("/")}>X</button>
         </div>
       </div>
     </div>

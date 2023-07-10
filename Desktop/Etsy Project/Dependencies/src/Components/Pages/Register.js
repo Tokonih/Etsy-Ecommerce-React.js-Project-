@@ -35,7 +35,7 @@ function Register() {
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify(signin),
     })
-      .then((resp) => resp.json())
+    //   .then((resp) => resp.json())
       .then((data) => {
         alert("user created");
         console.log(data);
