@@ -122,7 +122,7 @@ function Product() {
                     value={select}
                   >
                     <option value="">Select a color</option>
-                    <option value="yello">Yellow</option>
+                    <option value="yellow">Yellow</option>
                     <option value="pink">Pink</option>
                     <option value="red">Rd</option>
                   </select>

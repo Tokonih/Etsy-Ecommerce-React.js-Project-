@@ -91,7 +91,7 @@ function Cart() {
                    
                     <div>
                       <p>{item.description}</p>
-                      <p>Product colour: {item.color}</p>
+                      <p>Product colour: {item.select}</p>
                       <p>Size: </p>
                       <p>
                         <IoPencilSharp /> Edit

@@ -1,5 +1,5 @@
 // import Navigation from "../Navigation";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   IoLogoGoogle,
   IoLogoFacebook,
@@ -8,8 +8,6 @@ import {
 import { useState } from "react";
 
 function Register() {
-  const Navigate = useNavigate();
-  //   const Navigate = useNavigate();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -29,17 +27,17 @@ function Register() {
       email: email,
       password: password
     };
-    // console.log(signin);
+    console.log(signin);
 
+   
     fetch("http://159.65.21.42:9000/register", {
       method: "POST",
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify(signin),
     })
-      .then((resp) => resp.json)
+      .then((resp) => resp.json())
       .then((data) => {
         alert("user created");
-        // Navigate("/Signin")
         console.log(data);
       })
       .catch((err) => {
