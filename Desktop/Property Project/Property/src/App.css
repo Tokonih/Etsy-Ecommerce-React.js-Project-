@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.side-main{
   display: flex;
-  flex-direction: column;
+  height: 100vh;
+  /* color: white; */
+}
+
+.sidebar{
+  width: 260px;
+  flex-shrink: 0;
+  background-color:whitesmoke;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar-item{
+   padding: .75em 1em;
+   text-align: none;
+   display: block;
+   transition: background-color .3s;
+}
+.sidebar-item:hover{
+ background-color: white
+}
+.sidebar-title{
+  display: flex;
+  font-size: 1.2em;
+
+  justify-content: space-between;
+}
+
+.sidebar-title span i{
+  display: inline-block;
+  width:1.5em ;
+}
+
+.sidebar-title .toggle-btn{
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.sidebar.open .sidebar-title .toggle-btn{
+ transform: rotate(180deg);
+}
+.sidebar-content{
+  padding-top: .25em;
+  height: 0;
+  overflow: hidden;
+  /* display: block; */
+
+}
+.properties{
+  height: 50px;
+  width: 90%;
+  margin: auto;
+  /* border: 1px solid; */
+  display: block;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+}
+.sidebar-item.open .sidebar-content{
+  height: auto;
+}
+
+.side-container{
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.Dashboard{
+  height: 100px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.Dashboard h1{
+  font-size: 30px;
+}
+
+.totals{
+ /* width: 109%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.totalItems{
+  /* padding: 40px 60px; */
+  /* background-color: rgb(193, 193, 249); */
+}
+
+.side-container table{
+  margin-top: 50px;
+  width: 100%;
+}
+
+.side-container td, th{
+  padding: 8px;
+  border: .2px solid;
+  text-align: left;
+}
+
+.user-form{
+  height: 600px;
+  width: 30%;
+  margin: auto;
+  background-color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.user-form form{
+  height: 550px;
+  width: 90%;
+  margin: auto;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-form div{
+  margin-bottom: 50px;
+}
+
+.user-form form input{
+  display: block;
+  width: 100%;
+  padding: 10px;
 }
