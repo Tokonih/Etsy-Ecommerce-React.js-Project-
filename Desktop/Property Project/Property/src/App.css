@@ -13,9 +13,10 @@
 .sidebar{
   width: 260px;
   flex-shrink: 0;
-  background-color:whitesmoke;
+  background-color:#0C54A6;
   height: 100%;
   overflow: auto;
+  color: white;
 }
 
 .sidebar-item{
@@ -23,6 +24,10 @@
    text-align: none;
    display: block;
    transition: background-color .3s;
+  background-color:#0C54A6;
+  color: white;
+  
+   
 }
 .sidebar-item:hover{
  background-color: white
@@ -30,7 +35,6 @@
 .sidebar-title{
   display: flex;
   font-size: 1.2em;
-
   justify-content: space-between;
 }
 
@@ -65,14 +69,19 @@
   text-decoration: none;
   color: black;
   text-transform: capitalize;
+  color: white;
 }
+
+
+
 .sidebar-item.open .sidebar-content{
   height: auto;
 }
 
 .side-container{
   width: 100%;
-  background-color: whitesmoke;
+  /* background-color:#0C54A6; */
+  
 }
 
 .Dashboard{
@@ -102,19 +111,43 @@
 .side-container table{
   margin-top: 50px;
   width: 100%;
+  background-color: white;
 }
 
 .side-container td, th{
   padding: 8px;
-  border: .2px solid;
+  border: .2px solid whitesmoke;
   text-align: left;
+  width: 1%;
+}
+.Detailsbtn{
+  padding: 10px 10px;
+  background-color: #0C54A6;
+  color:white ;
+  border: none;
+  border-radius: 5px;
 }
 
+.editbtn{
+  padding: 10px 17px;
+  background-color: #219CDE;
+  color:white ;
+  border: none;
+  border-radius: 5px;
+}
+
+.deletebtn{
+  padding: 10px 10px;
+  background-color: red;
+  color:white ;
+  border: none;
+  border-radius: 5px;
+}
 .user-form{
   height: 600px;
   width: 30%;
   margin: auto;
-  background-color: white;
+  border:1px solid #0C54A6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,4 +169,22 @@
   display: block;
   width: 100%;
   padding: 10px;
+}
+
+.user-form form button{
+  padding: 10px 20px;
+  background-color:#0C54A6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.user-form form button:hover{
+  background-color: #219CDE
+
+}
+
+span{
+  color: red;
 }

@@ -31,7 +31,7 @@ function Users(){
                         <td>tokonih@gmail.com</td>
                         <td>3456789</td>
                         <td>tk</td>
-                        <td><button>Details</button> <button>Edit</button> <button>Delete</button></td>
+                        <td><button className="Detailsbtn">Details</button> <button className="editbtn">Edit</button> <button className="deletebtn">Delete</button></td>
                     </tr>
                 </table>
             </div>
