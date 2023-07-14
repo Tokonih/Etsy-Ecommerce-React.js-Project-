@@ -14,8 +14,6 @@ function AdminDashboard(){
                 <div className="totalItems"><h1>Total properties: <span></span></h1> </div>
                 <div className="totalItems"><h1>Total Agents: <span></span></h1> </div>
                 <div className="totalItems"><h1>Total Users: <span></span></h1> </div>
-                <div className="totalItems"><h1>Wishlist: <span></span></h1> </div>
-                <div className="totalItems"><h1>Appointment: <span></span></h1> </div>
                </div>
             <div>
                 <table>

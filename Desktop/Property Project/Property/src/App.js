@@ -8,6 +8,10 @@ import CreateAgent from './Component/CreateAgent';
 import EditAgent from './Component/EditAgent';
 import Agents from './Component/Agents';
 import Appointment from './Component/Appointment';
+import Property from './UsersPage/Property';
+import HeaderSection from './UsersPage/HeaderSection';
+import AppointmentPage from './UsersPage/AppointmentPage';
+import Properties from './Component/Properties';
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
                 <Route path='/EditAgent' element={<EditAgent/>}/>
                 <Route path='/Agents' element={<Agents/>}/>
                 <Route path='/Appointment' element={<Appointment/>}/>
+                <Route path='/Property' element={<Property/>}/>
+                <Route path='/HeaderSection' element={<HeaderSection/>}/>
+                <Route path='/AppointmentPage' element={<AppointmentPage/>}/>
+                <Route path='/Properties' element={<Properties/>}/>
           </Routes>
      </BrowserRouter>
     </div>

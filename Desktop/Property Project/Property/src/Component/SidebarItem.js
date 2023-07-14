@@ -55,14 +55,15 @@ export default function SidebartItem() {
         <div className="prp"><Link className="properties" to="/Agents">
           Agents
         </Link></div>
+        
         <div className="prp"><Link className="properties" to="/Appointment">
           {" "}
           Appointment
         </Link></div>
-        <div className="prp"><Link className="properties"> Property Reviews</Link></div>
+        <div className="prp"><Link className="properties" to='/Properties'> Properties</Link></div>
         <div className="prp"><Link className="properties"> Wishlist</Link></div>
       </div>
-      <div className={agentopen ? "sidebar-item open" : "sidebar-item "}>
+      {/* <div className={agentopen ? "sidebar-item open" : "sidebar-item "}>
         <div className="sidebar-title">
           <span>
             <i className="bi-house "></i>
@@ -74,7 +75,7 @@ export default function SidebartItem() {
           ></i>
         </div>
         
-      </div>
+      </div> */}
     </div>
   );
 }
