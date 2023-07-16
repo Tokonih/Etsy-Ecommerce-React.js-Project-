@@ -8,6 +8,7 @@ import useFetch from "./useFetch";
 function Home() {
   const {data3: category} = useFetch("http://159.65.21.42:9000/products")
   const {data4:shop} = useFetch("http://159.65.21.42:9000/products")
+  const {forHer:forHer} = useFetch("http://159.65.21.42:9000/products")
   return (
     <div>
       <Navigation />
@@ -58,7 +59,7 @@ function Home() {
         <div className="popular-gift-interest">
           <h2>Shop our popular gift categories</h2>
           <div className="popular-gift-row">
-            {category && category.map((item)=>(
+            {forHer && forHer.map((item)=>(
 
             <Link to={`/Shop/${item.category}/${item._id}`} className="popular-card">
               <img src={item.image} alt="" />
